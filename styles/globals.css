@@ -235,3 +235,13 @@ canvas {
   align-items: center;
   justify-content: center;
 }
+
+.github-link {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(-90deg) translateY(-5rem) translateX(-2rem);
+  transform-origin: top right;
+  background-color: #333;
+}

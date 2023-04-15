@@ -152,8 +152,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <a className="github-link" href="https://github.com/VAKHULA/qr-code">View on Github</a>
       <canvas ref={canvasElement} />
-        <video ref={videoElement} width={100} height={100} />
+      <video ref={videoElement} width={100} height={100} />
       <main>
         <div className="w25 h25" />
         <div className="w50 h25" />
