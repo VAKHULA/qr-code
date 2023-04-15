@@ -89,6 +89,7 @@ export default function Home() {
   const videoStream = useRef(null)
   const timer = useRef<any>(null)
   const [barcode, setBarcode] = useState("")
+  const [isSupported, setIsSupported] = useState(true)
 
   const captureAndDecode = async () => {
     if (videoElement.current && canvasElement.current && canvasContext.current) {
@@ -110,6 +111,12 @@ export default function Home() {
   }
 
   const init = async () => {
+    // @ts-ignore
+    if (!window.BarcodeDetector) {
+      setIsSupported(false)
+      return
+    }
+
     if (videoElement.current && canvasElement.current) {
       canvasContext.current = canvasElement.current.getContext("2d")
 
@@ -201,6 +208,9 @@ export default function Home() {
           </svg>
         </button>
       </div>
+      {!isSupported &&
+        <div className="notice">barcode detector is not supported by this browser</div>
+      }
     </>
   )
 }
